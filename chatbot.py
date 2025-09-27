@@ -7,8 +7,15 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-nltk.download('punkt', quiet=True)
-nltk.download('stopwords', quiet=True)
+# -------------------- 0. Safe NLTK Downloads --------------------
+def safe_nltk_download(resource_name):
+    try:
+        nltk.data.find(resource_name)
+    except LookupError:
+        nltk.download(resource_name.split('/')[-1], quiet=True)
+
+safe_nltk_download('tokenizers/punkt')
+safe_nltk_download('corpora/stopwords')
 
 from nltk.corpus import stopwords
 
@@ -64,7 +71,7 @@ def main():
 
         if st.button("Ask"):
             if user_input.strip():
-                st.write(f" Bot: {chatbot(user_input)}")
+                st.write(f"Bot: {chatbot(user_input)}")
             else:
                 st.write("Please enter a question.")
     else:
@@ -72,4 +79,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
