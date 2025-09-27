@@ -7,9 +7,8 @@ import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-# Download NLTK resources (only first run)
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download('punkt', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 from nltk.corpus import stopwords
 
@@ -73,3 +72,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
