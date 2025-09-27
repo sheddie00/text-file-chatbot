@@ -1,0 +1,4 @@
+Artificial Intelligence is transforming the world. 
+Machine learning is a subset of AI that deals with algorithms learning from data. 
+Deep learning is a type of machine learning that uses neural networks.
+Chatbots are a popular application of AI.
